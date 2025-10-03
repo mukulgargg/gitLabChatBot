@@ -1,0 +1,11 @@
+python-dotenv
+streamlit==1.38.0
+trafilatura==1.8.0
+beautifulsoup4==4.12.3
+pinecone-client==3.2.2
+sentence-transformers==3.0.1
+google-generativeai==0.7.2
+pydantic==2.8.2
+tqdm==4.66.4
+pyyaml==6.0.1
+numpy==1.26.4
