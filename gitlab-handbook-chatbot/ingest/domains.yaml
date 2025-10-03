@@ -1,0 +1,12 @@
+# ingest/domains.yaml
+seeds:
+  - https://handbook.gitlab.com/handbook/
+  - https://about.gitlab.com/direction/
+include:
+  - ^https://handbook\.gitlab\.com/handbook/.*    # handbook sections
+  - ^https://about\.gitlab\.com/direction/.*      # direction pages
+exclude:
+  - \.(pdf|png|jpg|jpeg|gif|svg)$
+  - \?         # skip query spam
+max_pages: 400
+respect_robots: true
