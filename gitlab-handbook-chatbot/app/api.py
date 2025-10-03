@@ -1,6 +1,6 @@
 import os, json, faiss, numpy as np, google.generativeai as genai
 from sentence_transformers import SentenceTransformer
-from .prompts import SYSTEM, ANSWER_TEMPLATE
+from prompts import SYSTEM, ANSWER_TEMPLATE
 
 class RAG:
     def __init__(self, index_dir="data/index", k=5):
@@ -8,7 +8,7 @@ class RAG:
         self.index = faiss.read_index(f"{index_dir}/faiss.index")
         self.meta = json.load(open(f"{index_dir}/meta.json"))
         genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
-        self.llm = genai.GenerativeModel("gemini-1.5-flash")
+        self.llm = genai.GenerativeModel("gemini-2.5-pro")
 
         self.k = k
 

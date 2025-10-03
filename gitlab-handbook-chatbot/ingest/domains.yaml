@@ -8,5 +8,5 @@ include:
 exclude:
   - \.(pdf|png|jpg|jpeg|gif|svg)$
   - \?         # skip query spam
-max_pages: 400
+max_pages: 20000
 respect_robots: true

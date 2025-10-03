@@ -1,6 +1,11 @@
-import os, streamlit as st
-from app.api import RAG
-from app.guards import is_safe
+import os
+import sys
+
+import streamlit as st
+from api import RAG
+from guards import is_safe
+
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 st.set_page_config(page_title="GitLab Handbook Chat", layout="centered")
 
@@ -9,7 +14,7 @@ st.caption("Answers grounded in official GitLab Handbook and Product Direction p
 
 with st.sidebar:
     st.subheader("Settings")
-    api = st.text_input("GEMINI_API_KEY", type="password", value=os.getenv("GEMINI_API_KEY",""))
+    api = st.text_input("GEMINI_API_KEY", type="password", value=os.getenv("GEMINI_API_KEY", ""))
     k = st.slider("Retriever k", 3, 10, 5)
     show_ctx = st.checkbox("Show retrieved chunks", value=False)
     st.markdown("[Project direction pages](https://about.gitlab.com/direction/)")
